@@ -56,6 +56,118 @@
           <a href="#"><img src="../assets/img/li.jpg" alt=""></a>
           <a href="#"><img src="../assets/img/kpl.jpg" alt=""></a>
       </div>
+      <div class="clearfix">
+            <div class="strategy_center fl">
+                <div class="item_header">
+                  <h3 class="item_title">内容中心</h3>
+                  <a href="#" class="more_btn">更多</a>
+                </div>
+                <div class="item_subnav">
+                    <a href="#">精品栏目</a>
+                    <span class="split"></span>
+                    <a href="#">赛事精品</a>
+                    <span class="split"></span>
+                    <a href="#">英雄攻略</a>
+                </div>
+                <div class="item_thirdnav0">
+                  <div class="title">
+                    <a href="#">最新</a>
+                    <a href="#">百星王者带你飞</a>
+                    <a href="#">峡谷情报局</a>
+                    <a href="#">零度王者视角</a>
+                    <a href="#">峡谷重案组第三季</a>
+                    <a href="#">王者克制论</a>
+                    <a href="#">上分拍档</a>
+                  </div>
+                </div>
+                <div class="item_content">
+                  <ul class="video_list ">
+                    <li>
+                      <a href="#">
+                        <img src="../assets/img/shipin1.jpg" alt="">
+                        <span class="clearfix ">
+                          <em class="fl ico-play">1.4万</em>
+                          <em class="fr">2019-06-14</em>
+                        </span>
+                        <span class="video-tit">【上分拍档】第85期：雄鹰展翅神隐无敌 出其不意瞬秒脆皮</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <img src="../assets/img/shipin2.jpg" alt="">
+                        <span class="clearfix ">
+                          <em class="fl ico-play">1.4万</em>
+                          <em class="fr">2019-06-14</em>
+                        </span>
+                        <span class="video-tit">【百星王者带你飞】93期：绝密眼位洞察全局，精准狙击从不失约</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <img src="../assets/img/shipin3.jpg" alt="">
+                        <span class="clearfix ">
+                          <em class="fl ico-play">1.4万</em>
+                          <em class="fr">2019-06-14</em>
+                        </span>
+                        <span class="video-tit">【峡谷情报局】66：稷下星之队首秀亮相，星辰之子闪“曜”登场</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <img src="../assets/img/shipin4.jpg" alt="">
+                        <span class="clearfix ">
+                          <em class="fl ico-play">1.4万</em>
+                          <em class="fr">2019-06-14</em>
+                        </span>
+                        <span class="video-tit">【百星王者带你飞】92期：精密细节收割残局，反野之王主宰胜利</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <img src="../assets/img/shipin5.jpg" alt="">
+                        <span class="clearfix ">
+                          <em class="fl ico-play">1.4万</em>
+                          <em class="fr">2019-06-14</em>
+                        </span>
+                        <span class="video-tit">【零度王者视角】第三十八期：高地爆破专家，冲破高地围栏</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <img src="../assets/img/shipin6.jpg" alt="">
+                        <span class="clearfix ">
+                          <em class="fl ico-play">1.4万</em>
+                          <em class="fr">2019-06-14</em>
+                        </span>
+                        <span class="video-tit">【上分拍档】第84期：狂兽之血千军睥睨 重炮之下皆化灰烬</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <img src="../assets/img/shipin7.jpg" alt="">
+                        <span class="clearfix ">
+                          <em class="fl ico-play">1.4万</em>
+                          <em class="fr">2019-06-14</em>
+                        </span>
+                        <span class="video-tit">【王者克制论】第37期：李九教你全面克制孙尚香</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <img src="../assets/img/shipin8.jpg" alt="">
+                        <span class="clearfix ">
+                          <em class="fl ico-play">1.4万</em>
+                          <em class="fr">2019-06-14</em>
+                        </span>
+                        <span class="video-tit">【峡谷情报局】65期：eStar人物志，老将猫神心之所向</span>
+                      </a>
+                    </li>
+                  </ul>
+
+                </div>
+            </div>
+        <div class="skin_center"></div>                  
+      </div>
       </div>
     </div>
   </div>
@@ -69,6 +181,7 @@ export default {
   data() {
     return {
       dataList: require("../assets/data/datalist.json"),
+      wangdata: require("../assets/data/wangdata.json"),
       list: [
         {
           title: "夏日全新版本",
@@ -108,6 +221,7 @@ export default {
     }
   },
   mounted() {
+    console.log(this.wangdata)
     setInterval(() => {
       this.nowIndex++;
       this.nowIndex = this.nowIndex > 4 ? 0 : this.nowIndex;
@@ -116,7 +230,7 @@ export default {
   }
 };
 </script>
-<style scoped>
+<style>
 * {
   margin: 0;
   padding: 0;
@@ -135,12 +249,18 @@ a {
   text-decoration: none;
   color: #c9c9dd;
 }
+.fl{
+  float: left;
+}
+.fr{
+  float:right;
+}
 .wrapper {
   position: relative;
 }
 .content {
   width: 100%;
-  height: 1100px;
+  height: 1075px;
   position: absolute;
   left: 0;
   top: 127px;
@@ -332,6 +452,7 @@ a {
 .quick_entrance{
   width: 1200px;
   height: 134px;
+  position: relative;
   font-size: 0;
   margin: 28px auto 34px;
 }
@@ -350,6 +471,123 @@ a {
 }
 .quick_entrance a img:hover{
   transform: scale(1.1);
+}
+.strategy_center{
+  width: 872px;
+  height: 528px;
+  margin-right: 33px;
+}
+.item_header{
+  position: relative;
+  margin-bottom: 16px;
+}
+.strategy_center .item_title{
+  background: url(../assets/img/xuebi.png) no-repeat;
+  background-position: 0 -106px;
+  width:140px;
+  height: 26px;
+  text-indent: 2rem;
+  line-height: 25px;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  display: inline-block;
+}
+.more_btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-left: 22px;
+    background: url(../assets/img/xuebi.png)no-repeat -252px 4px;
+    color: #999;
+}
+.item_subnav{
+  position: relative;
+  width: 872px;
+  height:32px;
+  line-height: 32px;
+  background: #f5f5f5;
+  margin-bottom: 5px;
+}
+.item_subnav a{
+  width: 289px;
+  display: block;
+  float: left;
+  text-align: center;
+  font-size: 14px;
+  color: #999;
+}
+.item_subnav .split{
+  width: 1px;
+  height: 20px;
+  overflow: hidden;
+  float: left;
+  background: #e1e1e1;
+  display: inline-block;
+  margin: 5px 0 0px;
+}
+.item_thirdnav0{
+  height: 26px;
+  line-height: 26px;
+  padding: 8px 0 9px;
+}
+.item_thirdnav0 .title{
+  text-indent: 8px;
+  cursor: pointer;
+  height:26px;
+  overflow:hidden;
+}
+.item_thirdnav0 .title a{
+  height: 24px;
+  line-height:24px;
+  padding:0 13px 0 8px;
+  border:1px solid #e5e5e5;
+  font-size: 14px;
+  color:#000;
+  background: #f5f5f5;
+  border-radius: 10px;
+  display: block;
+  float: left;
+  margin-right: 8px;
+}
+.item_content ul li{
+  position: relative;
+  width:209px;
+  margin: 0 12px 30px 0;
+  float:left;
+}
+.item_content ul li:nth-child(4n){
+  margin-right: 0;
+}
+.item_content .clearfix{
+  position:absolute;
+  top:103px;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  width: 189px;
+  height: 22px;
+  line-height: 22px;
+  color: #fff;
+  padding:0 10px;
+  font-size: 12px;
+}
+.video_list img{
+  width:209px;
+  height: 125px;
+}
+.item_content .clearfix .ico-play{
+  background:url(../assets/img/xuebi.png) no-repeat;
+  display: inline-block;
+  padding-left: 15px;
+  background-position:-255px -59px;
+}
+.video-tit{
+    display: block;
+    height: 40px;
+    overflow: hidden;
+    color: #333333;
+    margin-top: 10px;
+    font-size: 14px;
 }
 </style>
 

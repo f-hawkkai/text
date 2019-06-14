@@ -14,7 +14,7 @@
         Home
       },
       created:function(){
-          console.log("组件创建完成")
+          // console.log("组件创建完成")
       }
   }
 </script>
