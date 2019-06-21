@@ -60,7 +60,7 @@
             <div class="strategy_center fl">
                 <div class="item_header">
                   <h3 class="item_title">内容中心</h3>
-                  <a href="#" class="more_btn">更多</a>
+                  <a href="#" class="more_btn fr">更多</a>
                 </div>
                 <div class="item_subnav">
                     <a href="#">精品栏目</a>
@@ -71,102 +71,55 @@
                 </div>
                 <div class="item_thirdnav0">
                   <div class="title">
-                    <a href="#">最新</a>
-                    <a href="#">百星王者带你飞</a>
-                    <a href="#">峡谷情报局</a>
-                    <a href="#">零度王者视角</a>
-                    <a href="#">峡谷重案组第三季</a>
-                    <a href="#">王者克制论</a>
-                    <a href="#">上分拍档</a>
+                    <a href="#" @mouseover="handleDataList(index)" v-for="(item,index) in itemtitle" :key="index" :class="{'on':listIndex==index}">{{item.name}}</a>
                   </div>
                 </div>
                 <div class="item_content">
                   <ul class="video_list ">
-                    <li>
+                    <li v-for="(item,index) in nowData.tab" :key="index">
                       <a href="#">
-                        <img src="../assets/img/shipin1.jpg" alt="">
+                        <span class="video_one"><img :src="item.src" /></span>
                         <span class="clearfix ">
-                          <em class="fl ico-play">1.4万</em>
-                          <em class="fr">2019-06-14</em>
+                          <em class="fl ico-play">{{item.clicknumber}}</em>
+                          <em class="fr">{{item.time}}</em>
                         </span>
-                        <span class="video-tit">【上分拍档】第85期：雄鹰展翅神隐无敌 出其不意瞬秒脆皮</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <img src="../assets/img/shipin2.jpg" alt="">
-                        <span class="clearfix ">
-                          <em class="fl ico-play">1.4万</em>
-                          <em class="fr">2019-06-14</em>
-                        </span>
-                        <span class="video-tit">【百星王者带你飞】93期：绝密眼位洞察全局，精准狙击从不失约</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <img src="../assets/img/shipin3.jpg" alt="">
-                        <span class="clearfix ">
-                          <em class="fl ico-play">1.4万</em>
-                          <em class="fr">2019-06-14</em>
-                        </span>
-                        <span class="video-tit">【峡谷情报局】66：稷下星之队首秀亮相，星辰之子闪“曜”登场</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <img src="../assets/img/shipin4.jpg" alt="">
-                        <span class="clearfix ">
-                          <em class="fl ico-play">1.4万</em>
-                          <em class="fr">2019-06-14</em>
-                        </span>
-                        <span class="video-tit">【百星王者带你飞】92期：精密细节收割残局，反野之王主宰胜利</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <img src="../assets/img/shipin5.jpg" alt="">
-                        <span class="clearfix ">
-                          <em class="fl ico-play">1.4万</em>
-                          <em class="fr">2019-06-14</em>
-                        </span>
-                        <span class="video-tit">【零度王者视角】第三十八期：高地爆破专家，冲破高地围栏</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <img src="../assets/img/shipin6.jpg" alt="">
-                        <span class="clearfix ">
-                          <em class="fl ico-play">1.4万</em>
-                          <em class="fr">2019-06-14</em>
-                        </span>
-                        <span class="video-tit">【上分拍档】第84期：狂兽之血千军睥睨 重炮之下皆化灰烬</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <img src="../assets/img/shipin7.jpg" alt="">
-                        <span class="clearfix ">
-                          <em class="fl ico-play">1.4万</em>
-                          <em class="fr">2019-06-14</em>
-                        </span>
-                        <span class="video-tit">【王者克制论】第37期：李九教你全面克制孙尚香</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <img src="../assets/img/shipin8.jpg" alt="">
-                        <span class="clearfix ">
-                          <em class="fl ico-play">1.4万</em>
-                          <em class="fr">2019-06-14</em>
-                        </span>
-                        <span class="video-tit">【峡谷情报局】65期：eStar人物志，老将猫神心之所向</span>
+                        <span class="video-tit">{{item.title}}</span>
                       </a>
                     </li>
                   </ul>
-
                 </div>
             </div>
-        <div class="skin_center"></div>                  
+        <div class="skin_center fl">
+          <div class="item_header">
+            <h3 class="item_titletwo">英雄/皮肤</h3>
+            <a href="#" class="more_btn fr">更多</a>
+          </div>
+          <div class="item_subnavs">
+            <a href="#">最近英雄</a>
+            <span class="split"></span>
+            <a href="#">最新皮肤</a>
+            <span class="split"></span>
+            <a href="#">周免英雄</a>
+          </div>
+          <div class="item_conten">
+            <div class="item_down">
+              <a href="#"><img src="../assets/img/yunzhongjun.jpg" alt=""></a>
+              <div class="new_hero_bottom">
+                <p class="new_hero_name">新英雄：云中君</p>
+                <p>上线时间：2019-05-11</p>
+              </div>
+            </div>
+            <div class="item_up">
+              <ul>
+                <li>
+                  
+                </li>
+              </ul>
+            </div>
+          </div>
+        <div>
+            </div>  
+        </div>                  
       </div>
       </div>
     </div>
@@ -182,6 +135,8 @@ export default {
     return {
       dataList: require("../assets/data/datalist.json"),
       wangdata: require("../assets/data/wangdata.json"),
+      nowData: '',
+      listIndex: 0,
       list: [
         {
           title: "夏日全新版本",
@@ -204,6 +159,30 @@ export default {
           src: require("../assets/img/05.jpg")
         }
       ],
+      itemtitle:[
+        {
+          name:"最新"
+        },
+        {
+          name:"百星王者带你飞"
+        },
+        {
+          name:"峡谷情报局"
+        },
+        {
+          name:"零度王者视角"
+        },
+        {
+          name:"峡谷重案组第三季"
+        },
+        {
+          name:"王者克制论"
+        },
+        {
+          name:"上分拍档"
+        }
+      ],
+      imgList: [],
       nowIndex: 0,
       num: 0,
       nowIndex1:0,
@@ -218,10 +197,16 @@ export default {
     tab2(k){
       this.nowIndex1 = k;
       this.num1 = this.nowIndex1 * -360 + "px";
+    },
+    handleDataList(i){
+      this.listIndex = i;
+      this.nowData = this.wangdata.data[i];
     }
   },
+  created(){
+    this.nowData = this.wangdata.data[0];
+  },
   mounted() {
-    console.log(this.wangdata)
     setInterval(() => {
       this.nowIndex++;
       this.nowIndex = this.nowIndex > 4 ? 0 : this.nowIndex;
@@ -481,7 +466,7 @@ a {
   position: relative;
   margin-bottom: 16px;
 }
-.strategy_center .item_title{
+.item_title{
   background: url(../assets/img/xuebi.png) no-repeat;
   background-position: 0 -106px;
   width:140px;
@@ -494,9 +479,9 @@ a {
   display: inline-block;
 }
 .more_btn{
-    position: absolute;
+    /* position: absolute;
     top: 0;
-    right: 0;
+    right: 0; */
     padding-left: 22px;
     background: url(../assets/img/xuebi.png)no-repeat -252px 4px;
     color: #999;
@@ -517,7 +502,7 @@ a {
   font-size: 14px;
   color: #999;
 }
-.item_subnav .split{
+.split{
   width: 1px;
   height: 20px;
   overflow: hidden;
@@ -556,6 +541,35 @@ a {
   margin: 0 12px 30px 0;
   float:left;
 }
+.item_content ul li>a{
+  display: block;
+}
+.item_content .video_one{
+  display: block;
+  height: 125px;
+  position: relative;
+}
+.item_content .video_one:hover:before{
+  content: "";
+  width: 209px;
+  height: 125px;
+  background:rgb(0,0,0,0.5);
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+}
+.item_content .video_one:hover:after{
+  content: "";
+  width: 44px;
+  height: 45px;
+  background: url(../assets/img/xuebi.png) no-repeat;
+  background-position:-190px -60px;
+  position: absolute;
+  z-index: 5;
+  top: 30px;
+  left: 80px;
+}
 .item_content ul li:nth-child(4n){
   margin-right: 0;
 }
@@ -588,6 +602,62 @@ a {
     color: #333333;
     margin-top: 10px;
     font-size: 14px;
+}
+.item_thirdnav0 .title .on{
+  background: #f3c258;
+  color: #fff;
+}
+.item_titletwo{
+  background: url(../assets/img/xuebi.png) no-repeat;
+  background-position: 0 -143px;
+  width:140px;
+  height: 26px;
+  text-indent: 2rem;
+  line-height: 25px;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  display: inline-block;
+}
+.item_subnavs{
+    position: relative;
+    width: 295px;
+    height: 32px;
+    line-height: 32px;
+    background: #f5f5f5;
+    margin-bottom: 19px;
+}
+.item_subnavs a {
+    width: 97px;
+    display: block;
+    float: left;
+    text-align: center;
+    font-size: 14px;
+    color: #999;
+}
+.item_down{
+  width: 295px;
+  height: 224px;
+  margin-bottom: 10px;
+}
+.item_down .new_hero_bottom{
+  width: 295px;
+  height: 68px;
+  border: 1px solid #e5e5e5;
+  border-top:none;
+  margin-top: -5px;
+  border-radius: 2px; 
+  padding: 10px 15px;
+  box-sizing: border-box;
+}
+.item_down .new_hero_name{
+  font-size: 18px;
+  color: #333333;
+  font-weight: bold;
+}
+.new_hero_bottom p{
+  color: #999999;
+  font-size: 12px;
 }
 </style>
 
