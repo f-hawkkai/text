@@ -89,34 +89,118 @@
                   </ul>
                 </div>
             </div>
-        <div class="skin_center fl">
+        <div class="skin_center fl" v-changeTab>
           <div class="item_header">
             <h3 class="item_titletwo">英雄/皮肤</h3>
             <a href="#" class="more_btn fr">更多</a>
           </div>
           <div class="item_subnavs">
-            <a href="#">最近英雄</a>
+            <a href="javascript:;">最近英雄</a>
             <span class="split"></span>
-            <a href="#">最新皮肤</a>
+            <a href="javascript:;">最新皮肤</a>
             <span class="split"></span>
-            <a href="#">周免英雄</a>
+            <a href="javascript:;">周免英雄</a>
           </div>
-          <div class="item_conten">
-            <div class="item_down">
-              <a href="#"><img src="../assets/img/yunzhongjun.jpg" alt=""></a>
-              <div class="new_hero_bottom">
-                <p class="new_hero_name">新英雄：云中君</p>
-                <p>上线时间：2019-05-11</p>
+          <div class="item_contens fl">
+            <div class="item_conten fl">
+              <div class="item_down">
+                <a href="#"><img src="../assets/img/yunzhongjun.jpg" alt=""></a>
+                <div class="new_hero_bottom">
+                  <p class="new_hero_name">新英雄：云中君</p>
+                  <p>上线时间：2019-05-11</p>
+                </div>
+              </div>
+              <div class="item_up">
+                <ul>
+                  <li>
+                    <a href="#"><img src="../assets/img/yao.jpg" alt=""></a>
+                    <span class="item_zi">瑶</span>
+                  </li>
+                  <li>
+                    <a href="#"><img src="../assets/img/pangu.jpg" alt=""></a>
+                    <span class="item_zi">盘古</span>
+                  </li>
+                  <li>
+                    <a href="#"><img src="../assets/img/zhubajie.jpg" alt=""></a>
+                    <span class="item_zi">猪八戒</span>
+                  </li>
+                  <li>
+                    <a href="#"><img src="../assets/img/change.jpg" alt=""></a>
+                    <span class="item_zi">嫦娥</span>
+                  </li>
+                </ul>
               </div>
             </div>
-            <div class="item_up">
-              <ul>
-                <li>
-                  
-                </li>
-              </ul>
+            <div class="item_conten fl">
+              <div class="item_down">
+                <a href="#"><img src="../assets/img/lvbu.jpg" alt=""></a>
+                <div class="new_hero_bottom">
+                  <p class="new_hero_name">新皮肤：吕布-野性能量</p>
+                  <p>上线时间：2019-06-14</p>
+                </div>
+              </div>
+              <div class="item_up">
+                <ul>
+                  <li>
+                    <a href="#"><img src="../assets/img/peiqinhu.jpg" alt=""></a>
+                    <span class="item_zi">瑶</span>
+                  </li>
+                  <li>
+                    <a href="#"><img src="../assets/img/xiaoqiao.jpg" alt=""></a>
+                    <span class="item_zi">盘古</span>
+                  </li>
+                  <li>
+                    <a href="#"><img src="../assets/img/jialuo.jpg" alt=""></a>
+                    <span class="item_zi">猪八戒</span>
+                  </li>
+                  <li>
+                    <a href="#"><img src="../assets/img/niumo.jpg" alt=""></a>
+                    <span class="item_zi">嫦娥</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="item_conten fl">
+              <div class="item_thr fl">
+                <ul>
+                  <li>
+                    <a href="#"><img src="../assets/img/zhongkui.jpg" alt=""></a>
+                    <span class="item_zi">钟馗</span>
+                  </li>
+                  <li>
+                    <a href="#"><img src="../assets/img/ganjiang.jpg" alt=""></a>
+                    <span class="item_zi">干将莫邪</span>
+                  </li>
+                  <li>
+                    <a href="#"><img src="../assets/img/dianwei.jpg" alt=""></a>
+                    <span class="item_zi">典韦</span>
+                  </li>
+                  <li>
+                    <a href="#"><img src="../assets/img/luban.jpg" alt=""></a>
+                    <span class="item_zi">鲁班</span>
+                  </li>
+                  <li>
+                    <a href="#"><img src="../assets/img/zhuangzhou.jpg" alt=""></a>
+                    <span class="item_zi">庄周</span>
+                  </li>
+                  <li>
+                    <a href="#"><img src="../assets/img/chengyaojin.jpg" alt=""></a>
+                    <span class="item_zi">程咬金</span>
+                  </li>
+                  <li>
+                    <a href="#"><img src="../assets/img/yunzhong.jpg" alt=""></a>
+                    <span class="item_zi">云中君</span>
+                  </li>
+                  <li>
+                    <a href="#"><img src="../assets/img/gengduo.jpg" alt=""></a>
+                    <span class="item_zi"></span>
+                  </li>
+                </ul>
+              </div>
+              <p class="icon_watchs fr"><span class="icon_watch">限免时间：</span><em>2019-6-24至2019-6-30</em></p>
             </div>
           </div>
+          
         <div>
             </div>  
         </div>                  
@@ -186,6 +270,7 @@ export default {
       nowIndex: 0,
       num: 0,
       nowIndex1:0,
+      nowIndex2:0,
       num1:0
     };
   },
@@ -201,6 +286,9 @@ export default {
     handleDataList(i){
       this.listIndex = i;
       this.nowData = this.wangdata.data[i];
+    },
+    tab3(j){
+      this.nowIndex2 = j;
     }
   },
   created(){
@@ -212,6 +300,19 @@ export default {
       this.nowIndex = this.nowIndex > 4 ? 0 : this.nowIndex;
       this.num = this.nowIndex * -604 + "px";
     }, 3000);
+  },
+  directives:{
+    changeTab:{
+      bind(el){
+        let tabList=el.querySelectorAll(".item_subnavs a");
+        let conts = el.querySelector(".item_contens");
+        tabList.forEach((item,index)=>{
+            item.addEventListener("mouseover",function(){
+              conts.style.left=(-295*index)+"px";
+            })
+        })
+      }
+    }
   }
 };
 </script>
@@ -623,17 +724,21 @@ a {
     position: relative;
     width: 295px;
     height: 32px;
-    line-height: 32px;
+    line-height: 30px;
     background: #f5f5f5;
     margin-bottom: 19px;
 }
-.item_subnavs a {
+.item_subnavs a{
     width: 97px;
     display: block;
     float: left;
     text-align: center;
     font-size: 14px;
     color: #999;
+}
+.item_subnavs a:hover{
+  border-bottom: 2px solid #f3c258;
+  color: #000;
 }
 .item_down{
   width: 295px;
@@ -658,6 +763,104 @@ a {
 .new_hero_bottom p{
   color: #999999;
   font-size: 12px;
+}
+.skin_center{
+  width: 295px;
+  overflow: hidden;
+  position: relative;
+  height: 500px;
+}
+.item_conten{
+  width: 295px;
+}
+.item_contens{
+  width: 885px;
+  position: absolute;
+  left: 0;
+  top: 90px;
+  transition: .5s; 
+}
+.item_up ul li{
+  float: left;
+  margin-right: 7px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.item_up ul li:nth-last-child(1){
+  margin-right: 0;
+}
+.item_up ul li:hover:before{
+  content: "";
+  width: 68px;
+  height: 177px;
+  background:rgba(0,0,0,0.9);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.item_up ul li:hover .item_zi{
+  display: block;
+}
+.item_up .item_zi{
+  width: 20px;
+  display: none;
+  position: absolute;
+  color: #f3c258;
+  font-size: 14px;
+  padding-left: 2px;
+}
+.item_thr ul li{
+  float: left;
+  margin-right: 7px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.item_thr ul li:nth-child(4n){
+  margin-right: 0;
+}
+.item_thr ul:not(li:last-child):hover:before{
+  content: "";
+  width: 68px;
+  height: 177px;
+  background:rgba(0,0,0,0.9);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.item_thr ul li:hover .item_zi{
+  display: block;
+}
+.item_thr .item_zi{
+  width: 20px;
+  display: none;
+  position: absolute;
+  color: #f3c258;
+  font-size: 14px;
+  padding-left: 2px;
+}
+.item_conten .icon_watchs{
+  color: #999999;
+  font-size: 12px;
+  text-align: right;
+  position: relative;
+}
+.item_conten .icon_watch:before{
+  content: "";
+  position: absolute;
+  background: url(../assets/img/xuebi.png);
+  background-position: -659px -42px;
+  width: 14px;
+  height: 14px;
+  top: 2px;
+  left: -23px;
+  
 }
 </style>
 
